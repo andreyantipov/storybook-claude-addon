@@ -1,0 +1,42 @@
+{
+  "name": "storybook-addon-claude",
+  "$schema": "./node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "src",
+  "targets": {
+    "storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "storybook dev -p 6006"
+      }
+    },
+    "mastra": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx mastra dev --dir src/mastra"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "npx mastra dev --dir src/mastra",
+          "storybook dev -p 6006"
+        ],
+        "parallel": true
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "vite build"
+      }
+    },
+    "build-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "storybook build"
+      }
+    }
+  }
+}

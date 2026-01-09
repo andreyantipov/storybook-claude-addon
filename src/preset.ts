@@ -1,16 +1,6 @@
-import type { Options } from '@storybook/types';
-import { startClaudeServer } from './server/claude-server';
+// Storybook addon preset - provides manager entries only
+// Mastra is now started via Nx (npm run dev runs both in parallel)
 
 export function managerEntries(entry: string[] = []): string[] {
   return [...entry, require.resolve('./manager')];
-}
-
-// Start WebSocket server when Storybook loads
-export async function serverChannel(
-  channel: any,
-  options: Options & { configDir: string }
-) {
-  // Start the Claude WebSocket server
-  startClaudeServer();
-  return channel;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@andreyantipov/addon-claude",
-  "version": "1.0.2",
-  "description": "Storybook addon for Claude AI integration with xterm.js terminal and streaming",
+  "name": "@andreyantipov/storybook-addon-claude",
+  "version": "2.0.0",
+  "description": "Storybook addon for Claude AI integration with Mastra agents and streaming chat",
   "license": "MIT",
   "author": "Andrey Antipov",
   "repository": {
@@ -14,15 +14,12 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "bin": {
-    "claude-server": "./bin/claude-server.js"
-  },
   "scripts": {
-    "build": "vite build",
-    "dev": "vite build --watch",
-    "server": "node ./bin/claude-server.js",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build": "nx run storybook-addon-claude:build",
+    "dev": "nx run storybook-addon-claude:dev",
+    "storybook": "nx run storybook-addon-claude:storybook",
+    "mastra": "nx run storybook-addon-claude:mastra",
+    "build-storybook": "nx run storybook-addon-claude:build-storybook",
     "prepublishOnly": "npm run build"
   },
   "exports": {
@@ -45,7 +42,6 @@
   },
   "files": [
     "dist/**/*",
-    "bin/**/*",
     "README.md"
   ],
   "keywords": [
@@ -53,10 +49,11 @@
     "storybook",
     "claude",
     "anthropic",
+    "mastra",
     "ai",
-    "xterm",
-    "terminal",
-    "streaming"
+    "chat",
+    "streaming",
+    "agent"
   ],
   "peerDependencies": {
     "@storybook/components": "^8.0.0",
@@ -66,15 +63,14 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@xterm/addon-fit": "^0.10.0",
-    "@xterm/addon-web-links": "^0.11.0",
-    "@xterm/xterm": "^5.5.0",
-    "ws": "^8.18.0"
-  },
-  "optionalDependencies": {
-    "@anthropic-ai/sdk": "^0.39.0"
+    "@ai-sdk/anthropic": "^3.0.9",
+    "@mastra/core": "^0.24.9",
+    "ai": "^5.0.118",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
+    "@nx/storybook": "22.3.3",
+    "@nx/vite": "22.3.3",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/components": "^8.6.0",
     "@storybook/manager-api": "^8.6.0",
@@ -84,8 +80,8 @@
     "@storybook/types": "^8.6.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
-    "@types/ws": "^8.5.13",
     "@vitejs/plugin-react": "^4.3.4",
+    "nx": "22.3.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "storybook": "^8.6.15",
@@ -99,5 +95,6 @@
       "react"
     ],
     "icon": "https://www.anthropic.com/favicon.ico"
-  }
+  },
+  "nx": {}
 }
