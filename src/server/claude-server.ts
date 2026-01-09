@@ -117,7 +117,7 @@ function handleWithCLI(
     existingProcess.kill();
   }
 
-  const claudeProcess = spawn('claude', ['-p', prompt], {
+  const claudeProcess = spawn('claude', ['--dangerously-skip-permissions', '-p', prompt], {
     stdio: ['pipe', 'pipe', 'pipe'],
     shell: true,
   });

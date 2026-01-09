@@ -1,6 +1,6 @@
 {
   "name": "@andreyantipov/addon-claude",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storybook addon for Claude AI integration with xterm.js terminal and streaming",
   "license": "MIT",
   "author": "Andrey Antipov",
