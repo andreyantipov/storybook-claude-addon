@@ -1,8 +1,7 @@
 import type { Preview } from '@storybook/react';
-import { startClaudeServer } from '../src/server/claude-server';
 
-// Start the Claude server when Storybook loads
-startClaudeServer();
+// Note: Claude server is started automatically by the preset (Node.js side)
+// This preview file runs in the browser
 
 const preview: Preview = {
   parameters: {
