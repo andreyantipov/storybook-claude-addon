@@ -13,14 +13,14 @@ Storybook addon with Claude AI terminal (xterm.js) and streaming. Works with **C
 2. Install:
 
 ```bash
-pnpm add @andreyantipov/storybook-claude-addon
+pnpm add @andreyantipov/addon-claude
 ```
 
 3. Add to `.storybook/main.ts`:
 
 ```typescript
 addons: [
-  '@andreyantipov/storybook-claude-addon',
+  '@andreyantipov/addon-claude',
 ]
 ```
 
