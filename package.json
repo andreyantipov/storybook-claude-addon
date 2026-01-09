@@ -1,6 +1,6 @@
 {
   "name": "@andreyantipov/storybook-claude-addon",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Storybook addon for Claude AI integration with xterm.js terminal and streaming",
   "license": "MIT",
   "author": "Andrey Antipov",
@@ -64,11 +64,13 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0",
     "@xterm/addon-fit": "^0.10.0",
     "@xterm/addon-web-links": "^0.11.0",
     "@xterm/xterm": "^5.5.0",
     "ws": "^8.18.0"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
   },
   "devDependencies": {
     "@storybook/components": "^8.6.0",
